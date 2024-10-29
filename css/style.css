@@ -1,0 +1,1682 @@
+@charset "UTF-8";
+a{
+    color:black;
+    text-decoration: none;
+    display: inline-block;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: "Italiana", sans-serif;
+}
+
+.container{
+    padding-inline:4%;
+}
+.sec-title{
+    text-align:center;
+    font-size:50px;
+    padding:130px 0 50px 0 ;
+}
+
+
+/*---------------------ヘッダーパソコン---------------------------*/
+
+.header-sp{
+    display:none;
+}
+
+.header-pc {
+    width:100%;
+    display: flex;
+    position:fixed;
+    justify-content:space-between;
+    top:0;
+    left:0;
+    height:80px;
+    z-index: 10;
+    background-color:rgba(255, 255, 255, 0.6);
+}
+
+
+
+.header-pc .site-title{
+    width:250px;
+    margin-left:20px;
+}
+
+.header-pc .pc-nav{
+    width:50%;
+    margin-top:10px;
+}
+
+.header-pc .pc-nav ul  {
+    display: flex;
+    padding:30px 0;
+}
+
+.header-pc .pc-nav ul li {
+    margin-left: 8%;
+}
+
+/*--------------中心から外に線が伸びる-------------*/
+.header-pc .pc-nav ul li a{
+    position:relative;
+}
+.header-pc .pc-nav ul li a::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 1px;
+    background:#060707;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+.header-pc .pc-nav ul li a:hover:after{
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+
+.header-pc .icon {
+    width:10%;
+    margin-top:35px;
+}
+.header-pc .heart{
+    width:20px;
+    margin-right: 5%;
+}
+.header-pc .cart{
+    width:20px;
+    margin-right: 6%;
+}
+.header-pc .insta{
+    width:20px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/*---------------メインビジュアルパソコンーーーーーーーーーーーーーーーー*/
+
+#mainvisual .fade li {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    animation: fade 8s infinite;
+    margin-top:90px;
+}
+#mainvisual .fade li:nth-child(1) {
+    animation-delay: 0s;
+}
+#mainvisual .fade li:nth-child(2) {
+    animation-delay: 2s;
+}
+#mainvisual .fade li:nth-child(3) {
+    animation-delay: 4s;
+}
+#mainvisual .fade li:nth-child(4) {
+    animation-delay: 6s;
+}
+#mainvisual .fade li:nth-child(5) {
+    animation-delay: 8s;
+}
+
+#mainvisual .fade li img {
+    height: calc(100vh - 100px);
+    object-fit: cover;
+    width:100%;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*---------------ニューアライブ-ホーム-パソコン--------------------*/
+
+
+
+#new{
+    width: 100%;
+    height: auto;
+    padding-top:150px;
+    margin-top: 950px;
+}
+
+
+
+/*----view more-----*/
+#new .link-text a{
+    margin-block:30px;
+}
+.btn05{
+    /*線の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+    display: inline-block;
+    color: #333; 
+    padding: 10px 40px;
+    background:#eee;
+    text-decoration: none;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transition-delay: .7s;/*0.7秒遅れてアニメーション*/
+}
+
+/*hoverした際の、ボタンの背景とテキスト色の変更*/
+.btn05:hover{
+	background:#333;
+	color: #fff;
+}
+
+/*線の設定*/
+.btn05 span{
+    display: block;
+}
+
+/*横線の設定*/
+.btn05::before,
+.btn05::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/   
+    position: absolute;
+    /*線の形状*/   
+    width: 0;
+    height: 1px;
+    background: #333;
+    /*アニメーションの指定*/
+    transition: all 0.2s linear;
+}
+
+/*縦線の設定*/
+.btn05 span::before,
+.btn05 span::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/   
+    position: absolute;
+    /*線の形状*/
+    width:1px;
+    height:0;
+    background: #333;
+    /*アニメーションの指定*/
+    transition: all 0.2s linear;
+}
+
+/*hoverした際、線が縦横100%伸びる*/
+.btn05:hover::before,
+.btn05:hover::after{
+    width: 100%;
+}
+.btn05:hover span::before,
+.btn05:hover span::after{
+    height: 100%;
+}
+
+/*== 左上と右下から枠線が伸びて塗りに */
+
+/*右下から右上へ伸びる横線*/
+.bordercircle3::after{
+    right:0;
+    bottom: 0;
+    transition-duration: 0.4s;
+}
+
+/*右下から右上へ伸びる縦線*/
+.bordercircle3 span::after{
+    right:0;
+    bottom: 0;
+    transition-duration: 0.4s;
+}
+
+/*左上から右上へ伸びる横線*/
+.bordercircle3::before{
+    left: 0;
+    top: 0;
+    transition-duration: 0.4s;
+}
+
+/*左上から左下へ伸びる横線*/
+.bordercircle3 span::before{
+    left: 0;
+    top: 0;
+    transition-duration: 0.4s;
+}
+
+
+
+#new img{
+    height:400px;
+}
+
+#new .slider-slick{
+    width:94%;
+    margin:0 auto;
+}
+
+#new .slider-slick .slick-slide{
+    text-align: center;
+}
+
+#new .slider-slick li:hover{
+    opacity:0.7;
+}
+
+.slider-slick img{
+    object-fit: cover;
+    height: 400px;
+    width:100%;
+}
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+    z-index: 100;
+}
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: 0;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: 0;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+
+
+
+
+/*------------------カテゴリーホームパソコン---------------------*/
+
+
+#category{
+    margin: 150px 0;
+    background-image: url(../img/〜の砂.jpeg);
+    background-size: cover;
+    padding:80px 0;
+    object-fit: cover;
+}
+
+
+
+#category .item-list1{
+    display:flex;
+    
+}
+#category .item-list1 img{
+    width:100%;
+}
+#category .item-list1 li{
+    position:relative;
+}
+#category .item-list1 p{
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size:40px;
+    padding:10px;
+}
+
+#category .item-list2{
+    display:flex;
+    
+}
+#category .item-list2 img{
+    width:100%;
+}
+#category .item-list2 li{
+    position:relative;
+}
+#category .item-list2 p{
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size:40px;
+    padding:10px;
+}
+
+#category .item-list1 li:hover{
+    opacity:0.7;
+}
+#category .item-list1 li{
+    margin-right:5px;
+}
+#category .item-list2 li:hover{
+    opacity:0.7;
+}
+#category .item-list2 li{
+    margin-right:5px;
+}
+
+#category .item-list1 li p{
+    text-align: center;
+    margin-top: 5px;
+}
+#category .item-list2 li p{
+    text-align: center;
+    margin-top: 5px;
+}
+/*----------------ズームイン--------------------*/
+.zoomin img{
+	transform: scale(1);
+	transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+.zoomin a:hover img{/*hoverした時の変化*/
+	transform: scale(1.2);/*拡大の値を変更したい場合はこの数値を変更*/
+}
+
+.mask{
+    display: block;
+    line-height: 0;/*行の高さを0にする*/
+    overflow: hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+
+
+/*------------------ニュースホームパソコン-----------------------*/
+#news{
+    overflow: hidden;
+}
+
+#news .slide{
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:5%;
+    opacity: 0;
+}
+#news img{
+    width: 100%;
+}
+#news .top{
+    display: flex;
+    margin-top:80px;
+}
+#news .top .right{
+    width:50%;
+    margin-top:50px;
+    text-align: center;
+}
+#news .title{
+    font-size: 20px;
+    margin-bottom:20px;
+}
+#news .text{
+    line-height: 40px;
+}
+#news .bottom{
+    display: flex;
+}
+#news .bottom .left{
+    width:50%;
+    margin-top:50px;
+    text-align: center;
+} 
+.slide-left{
+    animation: slide-left 2s ease 0s 1 forwards;
+    opacity: 0;
+}
+@keyframes slide-left{
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-right{
+    animation: slide-right 2s ease 0s 1 forwards;
+    opacity: 0;
+}
+@keyframes slide-right{
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.link-text{
+    text-align: center;
+    margin-bottom:100px;
+}
+
+
+
+
+/*---------------------アバウトホームパソコン--------------------*/
+
+#about{
+    background-image: url(../img/riley-imctNO8QR3g-unsplash\ 2.jpg);
+}
+
+#about img{
+    width:50%;
+    object-fit: cover;
+}
+#about .photos{
+    display: flex;
+    padding-bottom:80px;
+}
+#about .photos .texts{
+    text-align: center;
+    margin-left:150px;
+}
+
+#about .photos .texts h3{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+#about .photos .texts p{
+    margin-bottom: 50px;
+}
+
+/*----------------コンタクトホームパソコン-------------------*/
+
+.contact {
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.contact-ttl {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 100px 40px;
+    text-align: center;
+}
+
+.contact-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-item,
+.contact-body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-item {
+    text-align: left;
+    width: 30%;
+    background-color: #eee;
+}
+
+.contact-body {
+    width: 70%;
+}
+
+.form-text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
+
+.contact-sex + .contact-sex {
+    margin-left: 10px;
+}
+
+.contact-sex-txt {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.form-select {
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-skill {
+    display: block;
+}
+
+.contact-skill + .contact-skill {
+    margin-top: 10px;
+}
+
+.contact-skill-txt {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.contact-submit {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 100vh;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------ニューアライブページ-パソコン------------------------*/
+
+#new-arrivals .grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(4,1fr);
+    background-color: #fff;
+    padding:3%;
+}
+#new-arrivals img{
+    height:400px;
+    width:350px;
+    object-fit: cover;
+}
+
+#new-arrivals .grid .item .item-list {
+    text-align: center;
+    margin:20px 0;
+}
+
+.fadein{
+    opacity:0;
+    transform:translateY(50px);
+    transition: .5s;
+}
+
+
+
+#new-arrivals .grid .item:hover{
+    opacity:0.7;
+}
+
+
+
+
+
+/*----------------------リングページパソコン----------------------*/
+
+.grid{
+    display:grid;
+    gap:60px;
+    grid-template-columns: repeat(3,1fr);
+    background-color: #fff;
+    padding: 3%;
+    margin-top: 50px;
+}
+.grid img{
+    height:400px;
+    width:100%;
+    object-fit: cover;
+}
+.grid .box-slide .item-list  p{
+    text-align: center;
+    margin:20px 0;
+}
+.box-scale{ /*--スケール部分を隠さないといけないからimgの周りに箱クラスをつけて---*/
+    overflow:hidden;
+}
+
+.box-slide img{ /*--少し遅れてゆっくりに----*/
+    transition:1.2s;
+}
+.box-slide:hover img{ /*----imgをホバーした時大きくなる---*/
+    transform:scale(1.2);
+}
+.box-slide a{ /*---aタグ最大まで伸ばす---*/
+    width:100%;
+}
+
+.grid .fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    }
+    
+
+
+
+
+/*-----------リングアイテムパソコン---------------------*/
+
+#ring-item .content-flex{
+    display:flex;
+}
+#ring-item .left-content{
+    width:50%;
+    padding:5%;
+}
+#ring-item .right-content{
+    width:50%;
+    padding:5%;
+}
+
+#ring-item .right-content .price p{
+    margin-bottom: 20px;
+}
+
+#ring-item #mainimg{
+    width:100%;
+}
+
+#ring-item #mainimg img{
+    width:100%;
+    object-fit:cover;
+    height: 700px;
+}
+
+#ring-item #subImg{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+#ring-item .left-content #subImg img{
+    max-width:100%;
+}
+
+
+#ring-item .right-content .cart{
+    display: flex;
+}
+
+#ring-item .right-content select{
+    width:30%;
+    padding:0 10px;
+    appearance: menulist;
+    border:#202020 1px solid;
+}
+#ring-item .right-content .add {
+    border: #202020 1px solid;
+    width:60%;
+    margin-left: 10px;
+}
+
+#ring-item .right-content .add a{
+    display: block;
+    text-align: center;
+    margin:10px auto;
+}
+#ring-item .right-content .add:hover{
+    background-color: #b7b4b4;
+}
+#ring-item .right-content .more p{
+    padding:5% 0 3% 10%;
+}
+#ring-item .right-content .more-text p{
+    padding-left:25%;
+}
+#ring-item .right-content .explanation{
+    font-size:13px;
+    margin-top:50px;
+}
+#ring-item .right-content .explanation .size{
+    margin-top:30px;
+}
+#ring-item .right-content .explanation .gram{
+    margin-top: 20px;
+}
+#ring-item .right-content .explanation .material{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+/*-------------------ニュースページパソコン---------------------*/
+
+
+#newspage .newslist{
+    margin:3% 5%;
+}
+
+#newspage .newslist dl{
+    display: flex;
+    margin:50px 0;
+}
+#newspage .newslist dt{
+    width:50%;
+}
+#newspage .newslist dt p{
+    margin-bottom: 20px;
+}
+#newspage .newslist dd{
+    width:50%;
+}
+
+#newspage .newslist img{
+    width:100%
+
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------ガイドページパソコン-------------------------*/
+
+
+
+#guide .guide-text{
+    text-align: center;
+    margin:30px 0;
+}
+.accordion-area{
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.accordion-area li{
+    margin: 10px 0;
+}
+
+.accordion-area section {
+	border: 1px solid #ccc;
+}
+
+/*アコーディオンタイトル*/
+.accordion-area .title {
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:1rem;
+    font-weight: normal;
+    padding: 3% 3% 3% 50px;
+    transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+.accordion-area .title::before,
+.accordion-area .title::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+    
+}
+.accordion-area .title::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+    
+}
+.accordion-area .title::after{    
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+
+}
+/*　closeというクラスがついたら形状変化　*/
+.accordion-area .title.close::before{
+	transform: rotate(45deg);
+}
+
+.accordion-area .title.close::after{
+	transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;/*はじめは非表示*/
+    background: #f3f3f3;
+	margin:0 3% 3% 3%;
+    padding: 3%;
+}
+
+
+
+
+
+/*---------------カンパニーページパソコン----------------------*/
+#company{
+    margin-top:150px;
+    padding-inline:8%;
+}
+#company h3{
+    text-align: center;
+    margin-block: 50px;
+}
+
+#company .notation dl{
+    display: flex;
+    flex-wrap: wrap;
+}
+#company .notation dt{
+    width:30%;
+    border-bottom: dotted 1px #000;
+    margin-bottom:20px;
+}
+#company .notation dd{
+    width:70%;
+    border-bottom: dotted 1px #000;
+    margin-bottom:20px;
+}
+#company p{
+    margin-bottom:20px;
+    font-size:13px;
+    text-align:center;
+}
+
+
+/*-----------------フッターパソコン-------------------*/
+.footer-sp{
+    display:none;
+}
+
+.footer-pc{
+    height:250px;
+}
+
+.footer-pc .detail{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+
+/*表示するテキストが切り替わる*/
+.footer-pc .detail .btntextchange{
+    /*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	border: 1px solid #555;
+	border-radius:25px;
+    width:150px;
+    height:60px;
+    text-align: center;
+	display: inline-block;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.footer-pc .detail .btntextchange:hover{
+    background:#333;
+    color:#fff;
+}
+
+.footer-pc .detail .btntextchange span{
+    /*絶対配置でテキストの位置を決める*/
+	position: absolute;
+	left: 50%;
+	top:50%;
+    transform:translate(-50%,-50%);
+    /*アニメーションの指定*/
+    transition: all .5s;
+/*ブロック要素にしてテキスト折り返しなし*/  
+	display: block;
+	white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.footer-pc .detail .btntextchange span:nth-child(2){
+	opacity:0;/*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.footer-pc .detail .btntextchange:hover span:nth-child(1){
+	opacity:0;/*透過0に*/
+}
+
+.footer-pc .detail .btntextchange:hover span:nth-child(2){
+	opacity:1;/*不透明に*/
+}
+
+
+
+
+
+.footer-pc .copy{
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+        
+
+
+
+/*--------------スクロールパソコン------------------------*/
+.scroll-top{
+    position: fixed;
+    right:50px;
+    bottom:30px;
+    z-index: 5;
+    opacity:0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    animation: arrowmove 1s ease-in-out infinite;
+}
+@keyframes arrowmove{
+    0%{bottom:20px;}
+    50%{bottom:25px;}
+    100%{bottom:20px;}
+}
+.scroll-top.scroll-view {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-size:0.9rem;
+    display: block;
+}
+.js-scroll a::after{
+    content:"";
+    position: absolute;
+    top:0;
+    right:0;
+    width:1px;
+    height: 50px;
+    background:#666;
+}
+.js-scroll a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(31deg);
+}
+_:-ms-lang(x), .js-scroll a::before{
+    right:-11px;
+}
+.js-pagetop a::after{
+    content:"";
+    position: absolute;
+    top:0;
+    right:0;
+    width:1px;
+    height: 50px;
+    background:#666;
+}
+.js-pagetop a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(31deg);
+}
+_:-ms-lang(x), .js-pagetop a::before{
+    right:0;
+}
+
+small{
+    text-align: center;
+    padding-top:30px;
+    color: #202020;
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------------スマホ---------------------------*/
+
+@media(max-width: 500px){
+
+    
+    .sec-title{
+        font-size: 30px;
+        margin:50px 0;
+    }
+
+    /*----------ヘッダースマホ-----------------*/
+    .header-pc{
+    display:none;
+    }
+
+    .header-sp{
+    width:100%;
+    display:block;
+    display:flex;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    z-index:10;
+    background-color: #fff;
+    }
+    .header-sp .icon{
+    display:flex;
+    width:calc(100% / 3);
+    height:20px;
+    margin-top:25px;
+    margin-left:10px;
+    }
+
+    
+    .header-sp .site-title{
+        width:calc(100% / 3);
+        text-align:center;
+        }
+    .header-sp .site-title img{
+        height:50px;
+        margin-top:10px;
+    }
+    header .heart{
+        width:20px;
+        margin-right: 5%;
+        }
+    header .cart{
+        width:20px;
+        margin-right: 6%;
+        }
+    header .insta{
+        width:20px;
+        }
+
+
+    /*------ハンバーガーメニュースマホ---------------------*/
+
+    .hamburger-wrapper{
+    width:calc(100% / 3);
+    position: relative;
+    }
+    
+    #hamburger {
+        position: absolute;
+        top:50%;
+        right:15px;
+        /* border:1px solid red; */
+        transform:translateY(-50%);
+        display: block;
+        width:30px;
+        height: 25px;
+        cursor:pointer;
+        transition: 0.5s;
+        z-index: 20;
+        }
+    #hamburger span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #020202;
+        transform: translateY(-50%);
+        border-radius: 4px;
+        transition:0.5s;
+        }
+    #hamburger span:nth-child(1){
+            top:0;
+        }
+        
+    #hamburger span:nth-child(2){
+            top:47%;
+        }
+        
+    #hamburger span:nth-child(3){
+            bottom:0;
+        }
+    .open #hamburger span{
+        background-color:#000;
+    }
+    .open #hamburger span:nth-child(1){
+        top:50%;
+        transform: rotate(-45deg);
+    }
+    .open #hamburger span:nth-child(2){
+        opacity:0;
+    }
+    .open #hamburger span:nth-child(3){
+        top:50%;
+        transform: rotate(45deg);
+    }
+
+    .sp-nav{
+        width:300px;
+        background-color:#fff;
+        position:fixed;
+        top:0;
+        right:-200px;
+        bottom:0;
+        opacity:0;
+        overflow-y: auto;
+        transition:0.5s;
+        z-index:20;
+    }
+    .sp-nav a{
+        color:black;
+    }
+    .open .sp-nav{
+        right:0;
+        opacity:1;
+    }
+    .sp-nav .sp-menu{
+        margin-top:100px;
+    }
+    .sp-nav .sp-menu li{
+        margin-top: 15px;
+        margin-left: 20px;
+        font-size:20px;
+    }
+    .sp-nav .sp-menu .sp-cate li{
+        margin-left:70px;
+    }
+    
+    #mask{
+        display:none;
+        transition:0.5s;
+    }
+    .open #mask{
+        width:100%;
+        height:100%;
+        background-color: #625f5f;
+        cursor:pointer;
+        display:block;
+        opacity:0.8;
+        position:fixed;
+        top:0;
+        right:0;
+        z-index:10;
+    }
+
+
+    /*------------メインビジュアルスマホーーーーーーーーーーーー*/
+    #mainvisual .fade li{
+        width:100%;
+    }
+    #mainvisual .fade li img{
+        height:50vh;
+        object-fit: cover;
+    }
+
+
+    /*----------------ニューアライブスマホ-------------------*/
+    #new{
+        padding-top:80px;
+        margin-top:300px;
+    }
+    
+    #new .slider-slick li{
+        margin-right:5px;
+    }
+    #new .slider-slick li:hover{
+        opacity:0.7;
+    }
+    #new .slider-slick img{
+        height:250px;
+    }
+    #new .slider-slick a{
+        width:100%;
+    }
+
+    /*---------------ニューアライブページスマホ--------------------*/
+    .sec-title{
+        padding:50px 0 30px 0 ;
+    }
+    #new-arrivals .grid{
+        grid-template-columns: repeat(2,1fr);
+        gap:5;
+    }
+    #new-arrivals .grid .item{
+        margin-top: 20px;
+    }
+    #new-arrivals .grid img{
+        width:100%;
+        height:250px;
+        object-fit: cover;
+    }
+
+    /*-------------------カテゴリスマホ--------------------------*/
+    
+    #category{
+        margin:0;
+        padding:30px 0;
+    }
+    #category .sec-title{
+        padding:0;
+    }
+    #category .item-list1 li{
+        position:relative;
+    }
+    #category .item-list1 p{
+        position:absolute;
+        right:-5px;
+        bottom:-5px;
+        font-size:20px;
+        font-weight: bold;
+    }
+    #category .item-list2 li{
+        position:relative;
+    }
+    #category .item-list2 p{
+        position:absolute;
+        right:-5px;
+        bottom:-5px;
+        font-size:20px;
+        font-weight: bold;
+    }
+
+
+    /*----------------ニューススマホ------------------------*/
+    #news .sec-title{
+        background-image: none;
+        padding:0;
+    }
+    #news .top{
+        flex-direction: column;
+        margin-top:0;
+        margin-bottom:20px;
+    }
+    #news .bottom{
+        flex-direction: column-reverse;
+    }
+    
+    #news .slide{
+        width:100%;
+    }
+    #news .top .right{
+        width:100%;
+        padding-inline: 3%;
+    }
+    #news .text{
+        line-height: 25px;
+        font-size:15px;
+    }
+    #news .bottom .left{
+        width:100%;
+        padding-inline: 3%;
+    }
+    #news .link-text{
+        margin-top:50px;
+    }
+    /*--------------ニュースページスマホ----------------------*/
+    #newspage .sec-title{
+        padding:80px 0 30px 0 ;
+    }
+
+    #newspage .newslist dl{
+        flex-direction: column;
+    }
+    #newspage .newslist dd{
+        width:100%;
+    }
+    #newspage .newslist dt{
+        width:100%;
+    }
+    #newspage .newslist dt p{
+        text-align: center;
+        font-size: 12px;
+        padding-top:20px;
+    }
+
+    /*--------------アバウトスマホ----------------------*/
+    #about{
+    background-image: url(../img/stone\ 背景\　大.jpeg);
+    background-size: cover;
+    width:100%;
+    padding:50px 0 140px 0;
+    }
+    #about .sec-title{
+        padding: 0;
+    }
+    
+    
+    #about .container{
+        padding-inline:30px;
+    }
+    #about .photos {
+    flex-direction: column;
+    position: relative;
+    }
+    #about .photos img{
+        object-fit: cover;
+        width:70%;
+        height:90%;
+    }
+    #about .photos .texts{
+        margin-left:0;
+        padding:30px;
+        font-size: 10px;
+        background-color:#fff;
+        height:auto;
+        position:absolute;
+        top:80px;
+        right:0;
+        left:120px;
+        padding-inline:1%;
+    }
+    #about .photos .texts h3{
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    #about .photos .texts p{
+        margin-bottom: 5px;
+    }
+
+
+
+
+
+
+/*----------------コンタクトページスマホ-------------------*/
+
+    /*---------------コンタクトスマホ----------------------*/
+    #contact-pc {
+        display:none;
+    }
+    .contact-ttl{
+        padding:0;
+    }
+
+    .footer-pc{
+        display:none;
+    }
+
+
+
+
+
+
+    /*----------------------リングページスマホ----------------*/
+
+
+    #ring .grid{
+        display:grid;
+        gap:10px;
+        grid-template-columns: repeat(2,1fr);
+        background-color: #fff;
+    }
+    #ring .sec-title{
+        padding:80px 0 30px 0;
+        background-image: none;
+    }
+    .grid img{
+        height:250px;
+        width:100%;
+        object-fit: cover;
+    }
+    #ring .grid .item{
+        margin-top: 20px;
+    }
+
+
+    /*-----------リングアイテムページスマホ---------------------*/
+    #ring-item .sec-title{
+        text-align: center;
+        padding:40px 0 30px 0 ;
+    }
+    #ring-item .content-flex{
+    flex-direction: column;
+    }
+    #ring-item .left-content{
+        width:100%;
+        padding:5%;
+    }
+    #ring-item #mainimg img{
+        width:100%;
+        object-fit:cover;
+        height: 400px;
+    }
+    #ring-item .right-content{
+        width:100%;
+        padding:5%;
+    }
+
+    #ring-item .right-content .explanation{
+        font-size:13px;
+        margin-top:50px;
+        text-align: center;
+    }
+/*---------------------ネックレスページスマホ-----------------------*/
+#neckless .sec-title{
+        padding:80px 0 30px 0 ;
+}
+#neckless .grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #fff;
+}
+#neckless img{
+    height:250px;
+    width:350px;
+    object-fit: cover;
+}
+#neckless .grid .item{
+    margin-top: 20px;
+}
+/*---------------------ピアスページスマホ-----------------------*/
+#pierced .sec-title{
+    padding:80px 0 30px 0 ;
+}
+#pierced .grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #fff;
+}
+#pierced .grid .item{
+    margin-top: 20px;
+}
+/*---------------------イヤカフページスマホ-----------------------*/
+#earcuff .sec-title{
+    padding:80px 0 30px 0 ;
+}
+#earcuff .grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #fff;
+}
+#earcuff .grid .item{
+    margin-top: 20px;
+}
+/*---------------------ブレスレットページスマホ-----------------------*/
+#bracelet .sec-title{
+    padding:80px 0 30px 0 ;
+}
+#bracelet .grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #fff;
+}
+#bracelet .grid .item{
+    margin-top: 20px;
+}
+
+
+/*---------------------ガイドページスマホ-----------------------*/
+#guide .sec-title{
+    padding:80px 0 30px 0 ;
+    background-image: none;
+}
+#guide .guide-text{
+    padding-inline: 3%;
+}
+#guide .guide-text p{
+    text-align: center;
+    font-size:12px;
+}
+
+
+/*---------------------カンパニーページスマホ-----------------------*/
+#company{
+    padding-inline:5%;
+}
+#company .sec-title{
+    font-size: 20px;
+}
+#company .notation{
+    font-size:10px;
+}
+#company p{
+    text-align:left;
+}
+
+
+/*-----------------------フッタースマホ---------------------------*/
+.footer-sp{
+    display: block;
+    background-color: #e1dcdc;
+}
+.footer-sp .footermenu{
+    text-align:center;
+    font-size:12px;
+    padding-top:30px;
+}
+.footer-sp .footermenu img{
+    width:20px;
+}
+.footer-sp .footermenu li{
+    margin-bottom:5px;
+}
+.footer-sp .footer-copy{
+    text-align: center;
+    padding:12px 0 ;
+    font-size:10px;
+}
+
+
+
+}
+
